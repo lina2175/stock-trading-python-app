@@ -12,6 +12,8 @@ Keep `.env` private. Credentials and log files are excluded from Git.
 
 ## Run
 
+To review the exported data, open `tickers.csv`. To query the table in Snowflake, open `linadata.sql`, select the database and schema containing `STOCK_TICKERS`, and run the query. The SQL file contains the query; the CSV contains the exported data.
+
 - `python script.py`: download all ticker pages, add a snapshot date, write the CSV, and replace the Snowflake table's rows.
 - `python scheduler.py`: run the job immediately and then daily at 09:00 in the machine's local timezone. Keep the process running for scheduled jobs to execute.
 - `python REST_API_dataextractor_ETLstyle.py`: run the standalone CSV export without uploading to Snowflake. This version writes to the current working directory.
